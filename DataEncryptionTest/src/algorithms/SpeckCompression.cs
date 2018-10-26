@@ -13,7 +13,6 @@ namespace DataEncryptionTest.src.algorithms
         const UInt64 MASK64 = 0xFFFFFFFFFFFFFFFF;
 
         private ushort word;
-        private ushort typeBits;
         private ushort keyLen;
         private ushort maxRounds;
         private ulong mask;
@@ -36,7 +35,6 @@ namespace DataEncryptionTest.src.algorithms
                 case 4:
 
                     this.word = 16;
-                    this.typeBits = 16;
                     this.maxRounds = 22;
                     this.mask = MASK16;
                     this.alpha = 7;
@@ -46,7 +44,6 @@ namespace DataEncryptionTest.src.algorithms
                 case 6:
 
                     this.word = 24;
-                    this.typeBits = 32;
                     this.maxRounds = 23;
                     this.mask = MASK24;
 
@@ -54,7 +51,6 @@ namespace DataEncryptionTest.src.algorithms
                 case 8:
 
                     this.word = 32;
-                    this.typeBits = 32;
                     this.maxRounds = 27;
                     this.mask = MASK32;
 
@@ -62,7 +58,6 @@ namespace DataEncryptionTest.src.algorithms
                 case 12:
 
                     this.word = 48;
-                    this.typeBits = 64;
                     this.keyLen = 3;
                     this.maxRounds = 29;
                     this.mask = MASK48;
@@ -71,7 +66,6 @@ namespace DataEncryptionTest.src.algorithms
                 case 16:
 
                     this.word = 64;
-                    this.typeBits = 64;
                     this.maxRounds = 34;
                     this.mask = MASK64;
 
@@ -212,10 +206,6 @@ namespace DataEncryptionTest.src.algorithms
 
     public class InvalidDataSizeException : Exception
     {
-        public InvalidDataSizeException()
-        {
-        }
-
         public InvalidDataSizeException(string dataSize)
              : base(String.Format("Invalid Data Size: {0}", dataSize))
         {

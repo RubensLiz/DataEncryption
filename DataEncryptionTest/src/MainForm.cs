@@ -15,6 +15,7 @@ namespace DataEncryptionTest
         public MainForm()
         {
             InitializeComponent();
+            this.comboBoxBytes.SelectedIndex = 0;
         }
     }
 }
